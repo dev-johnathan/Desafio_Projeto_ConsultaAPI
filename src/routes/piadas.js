@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/piadas', async (req, res) => {
   try {
     const chuckNorrisApiResponse = await axios.get('https://api.chucknorris.io/jokes/random');
     

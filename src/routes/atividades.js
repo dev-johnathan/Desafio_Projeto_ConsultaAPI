@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/atividades', async (req, res) => {
   try {
     const boredApiResponse = await axios.get('https://www.boredapi.com/api/activity');
     
