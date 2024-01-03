@@ -1,7 +1,7 @@
-// src/models/chuckNorrisModel.js
-
+// classe com as informações das piadas
 class piada {
     constructor(joke) {
+      // atributos
       this.id = joke.id;
       this.joke = joke.value;
       this.category = joke.category;
@@ -9,6 +9,6 @@ class piada {
       this.createdAt = new Date(joke.created_at).toLocaleDateString();
     }
   }
-  
+  // Exportação da classe
   module.exports = ChuckNorrisModel;
   

@@ -1,10 +1,12 @@
+// importação de módulos
 const express = require('express');
 const axios = require('axios');
 const apiAtividade = require('../controller/atividadeController');
 
+// criação de instância
 const router = express.Router();
 
-  
+// Rota GET para /atividades
 router.get('/atividades', async (req, res) => {
     try {
       const atividade = await apiAtividade.getAtividades();
@@ -15,5 +17,5 @@ router.get('/atividades', async (req, res) => {
     }
   });
   
-  
-  module.exports = router;
+// Exportação do módulo router
+module.exports = router;

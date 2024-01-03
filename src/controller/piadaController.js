@@ -1,11 +1,12 @@
+// importação de bibliotecas
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 
+// função que obtêm os dados da API
 async function getPiadas() {
+  // requisição da API e formatação da resposta
   try {
     const chuckNorrisApiResponse = await axios.get('https://api.chucknorris.io/jokes/random');
-
-    console.log(chuckNorrisApiResponse)
     
     const formattedResponse = {
       data_atualizacao: formatDate(chuckNorrisApiResponse.data.updated_at),
@@ -17,12 +18,14 @@ async function getPiadas() {
     };
 
     return formattedResponse;
-  } catch (error) {
+  } 
+  // se a requisição der erro, mostra uma mensagem no console
+  catch (error) { 
     console.error('Error:', error);
     throw new Error('Internal Server Error');
   }
 }
-
+// função para formatação da string de data
 function formatDate(dateString) {
   const date = new Date(dateString);
   const day = date.getDate().toString().padStart(2, '0');
@@ -30,7 +33,7 @@ function formatDate(dateString) {
   const year = date.getFullYear();
   return `${day}-${month}-${year}`;
 }
-
+// exportação do modulo 
 module.exports = {
   getPiadas,
 };
