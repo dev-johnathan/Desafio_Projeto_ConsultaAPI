@@ -1,10 +1,7 @@
-const express = require('express');
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 
-const router = express.Router();
-
-router.get('/', async (req, res) => {
+async function getAtividades() {
   try {
     const boredApiResponse = await axios.get('https://www.boredapi.com/api/activity');
     
@@ -16,11 +13,13 @@ router.get('/', async (req, res) => {
       acessibilidade: `${(boredApiResponse.data.accessibility * 100).toFixed(0)}%`
     };
 
-    res.status(200).json(formattedResponse);
+    return formattedResponse;
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    throw new Error('Internal Server Error');
   }
-});
+}
 
-module.exports = router;
+module.exports = {
+  getAtividades,
+};

@@ -1,12 +1,11 @@
-const express = require('express');
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 
-const router = express.Router();
-
-router.get('/', async (req, res) => {
+async function getPiadas() {
   try {
     const chuckNorrisApiResponse = await axios.get('https://api.chucknorris.io/jokes/random');
+
+    console.log(chuckNorrisApiResponse)
     
     const formattedResponse = {
       data_atualizacao: formatDate(chuckNorrisApiResponse.data.updated_at),
@@ -17,12 +16,12 @@ router.get('/', async (req, res) => {
       referencia: chuckNorrisApiResponse.data.url
     };
 
-    res.status(200).json(formattedResponse);
+    return formattedResponse;
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    throw new Error('Internal Server Error');
   }
-});
+}
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -32,4 +31,6 @@ function formatDate(dateString) {
   return `${day}-${month}-${year}`;
 }
 
-module.exports = router;
+module.exports = {
+  getPiadas,
+};
