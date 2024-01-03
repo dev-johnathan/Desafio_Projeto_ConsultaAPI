@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-const apiRoutes = require('./routes/apiChuckNorrisRoute');
+const apiChuckNorrisRoute = require('./routes/apiChuckNorrisRoute');
+const apiAtividadesRoute = require('./routes/apiAtividadeRoute');
 const port = 3000;
 
-app.use('/piadas', apiRoutes);
+app.use('/', apiChuckNorrisRoute);
+app.use('/', apiAtividadesRoute);
 
 
 app.get('/', (req, res) => {
