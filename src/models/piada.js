@@ -13,12 +13,14 @@ class Piada {
 
     obterPiadaFormatada() {
       return `
+        <div class="piada">
           <p>Data de Atualização: ${this.updatedAt}</p>
           <p>Data de Criação: ${this.createdAt}</p>
           <p>ícone: ${this.chuckNorris}</p>
           <p>Id: ${this.id}</p>
           <p>Piada: ${this.joke}</p>
           <p>Referência: ${this}</p>
+        </div>
       `;
   }
 }

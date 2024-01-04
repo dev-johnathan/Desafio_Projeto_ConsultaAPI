@@ -12,11 +12,13 @@ class Atividade {
     
     obterAtividadeFormatada() {
       return `
+        <div class="atividade>
           <p>ID: ${this.id}</p>
           <p>Joke: ${this.activity}</p>
           <p>Category: ${this.type}</p>
           <p>Chuck Norris: ${this.participants}</p>
           <p>Created At: ${this.price}</p>
+        </div>
       `;
   }
   }
