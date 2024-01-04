@@ -2,6 +2,7 @@
 
 class Piada {
     constructor(joke) {
+      // atributos
       this.id = joke.id;
       this.joke = joke.value;
       this.category = joke.category;

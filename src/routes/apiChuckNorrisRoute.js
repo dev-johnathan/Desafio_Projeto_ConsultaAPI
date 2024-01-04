@@ -1,8 +1,10 @@
+// importação de módulos
 const express = require('express');
 const apiPiada = require('../controller/piadaController');
-const Piada= require('../models/piada')
+
 const router = express.Router();
 
+// Rota GET para /piadas
 router.get('/piadas', async (req, res) => {
     try {
       const dadosPiada = await apiPiada.getPiadas();
@@ -19,4 +21,5 @@ router.get('/piadas', async (req, res) => {
     }
   });
   
+// Exportação do módulo router
 module.exports = router;
