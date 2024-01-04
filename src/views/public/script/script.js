@@ -1,5 +1,5 @@
 import {Piada} from '../models/piada.js';
-import {Atividade} from '/public/models/atividade.js';
+import {Atividade} from '../models/atividade.js';
 
 document.getElementById('chuckNorrisButton').addEventListener('click', ChuckNorris);
 document.getElementById('activityButton').addEventListener('click', Activitys);
@@ -17,14 +17,9 @@ async function ChuckNorris() {
 		const data = await response.json();
 		clear();
 
-        console.log(data);
         const piadaModel = new Piada(data);
-
-        console.log(piadaModel);
-
         let textDiv = document.getElementById("content");
         textDiv.innerHTML = piadaModel.obterPiadaFormatada();
-
     } catch (error) {
         console.error('Error:', error);
     }
@@ -33,11 +28,14 @@ async function ChuckNorris() {
 async function Activitys() {
     try {
         const response = await fetch(`http://localhost:3000/api/atividades`, {
-			method: 'GET',
-		});
-		const data = await response.json();
-		clear();
-        console.log(data);
+            method: 'GET',
+        });
+        const data = await response.json();
+        clear();
+
+        const activityModel = new Atividade(data);
+        let textDiv = document.getElementById("content");
+        textDiv.innerHTML = activityModel.obterAtividadeFormatada();
     } catch (error) {
         console.error('Error:', error);
     }
