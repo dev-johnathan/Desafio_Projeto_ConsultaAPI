@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/needlework-good');
+@import url('https://fonts.cdnfonts.com/css/maven-pro-2');
 
 *{
     padding: 0;
@@ -8,6 +9,26 @@
 
 body{
    background-color: #00BF63;
+}
+
+.back{
+    position: absolute;
+    display: none;
+    
+    
+}
+.back button{
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    
+}
+.back button img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
 }
 
 .container{
@@ -60,6 +81,7 @@ body{
 
 }
 
+
 .container .content .buttons{
     position: absolute;
     top: 50%;
@@ -81,7 +103,27 @@ body{
     transition:0.5s;
 }
 
-.container .content .buttons button:hover{
+.container .content .buttons button:hover,.recharge button:hover{
     transform: scale(1.1);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.container .content .piada{
+    text-align: left;
+    font-family: 'Maven Pro', sans-serif;
+    margin-top: 60px;
+    
+    
+}
+
+.container .content .atividade{
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.2rem;
+    margin-top: 20px;
+
 }
