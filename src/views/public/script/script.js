@@ -1,4 +1,4 @@
-import {Piada} from '/public/models/piada.js';
+import {Piada} from '../models/piada.js';
 import {Atividade} from '/public/models/atividade.js';
 
 document.getElementById('chuckNorrisButton').addEventListener('click', ChuckNorris);
@@ -21,6 +21,9 @@ async function ChuckNorris() {
         const piadaModel = new Piada(data);
 
         console.log(piadaModel);
+
+        let textDiv = document.getElementById("content");
+        textDiv.innerHTML = piadaModel.obterPiadaFormatada();
 
     } catch (error) {
         console.error('Error:', error);
