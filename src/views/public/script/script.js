@@ -17,9 +17,8 @@ async function ChuckNorris() {
 		const data = await response.json();
 		clear();
 
-        const piadaModel = new Piada(data);
-
         console.log(data);
+        const piadaModel = new Piada(data);
 
         console.log(piadaModel);
 
