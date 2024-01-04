@@ -1,6 +1,6 @@
 // src/models/chuckNorrisModel.js
 
-class Piada {
+export class Piada {
     constructor(joke) {
       // atributos
       this.id = joke.id;
@@ -23,7 +23,4 @@ class Piada {
         </div>
       `;
   }
-}
-  
-  module.exports = Piada;
-  
+}  

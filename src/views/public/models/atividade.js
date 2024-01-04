@@ -1,5 +1,5 @@
 // classe com as informações das atividades
-class Atividade {
+export class Atividade {
     constructor(activity) {
       // atributos
       this.activity = activity.activity;
@@ -22,5 +22,3 @@ class Atividade {
       `;
   }
   }
-  
-  module.exports = Atividade;

@@ -1,5 +1,8 @@
-const Piada = require('../models/piada');
-const Atividade= require('../models/atividade');
+import {Piada} from '/public/models/piada.js';
+import {Atividade} from '/public/models/atividade.js';
+
+document.getElementById('chuckNorrisButton').addEventListener('click', ChuckNorris);
+document.getElementById('activityButton').addEventListener('click', Activitys);
 
 function clear(){
     const buttons= document.getElementById('buttons');
@@ -14,9 +17,7 @@ async function ChuckNorris() {
 		const data = await response.json();
 		clear();
 
-        const piadaModel= new Piada(data);
-
-        piadaModel.
+        const piadaModel = new Piada(data);
 
         console.log(data);
 
